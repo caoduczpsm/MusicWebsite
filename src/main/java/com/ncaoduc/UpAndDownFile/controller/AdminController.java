@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 @Controller
 @RequestMapping("admin")
-public class SongController {
+public class AdminController {
 
     @Autowired
     private SongServiceImpl songService;
