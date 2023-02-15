@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+  <head>
+      <meta charset="UTF-8">
+      <title>Music Management</title>
+      <style type="text/css">
+          label{
+              display: inline-block;
+              width: 200px;
+              margin: 5px;
+              text-align: left;
+          }
+          button{
+              margin: 10px;
+              padding: 10px;
+          }
+      </style>
+
+    <script th:inline="javascript">
+    </script>
+
+  </head>
+  <body>
+
+    <div class="container">
+
+      <form action="#" th:object="${song}" method="post" enctype="multipart/form-data">
+
+        <label>Choose music file (*.mp3)</label>
+        <input type="file" accept=".mp3" id="mp3File" name="mp3File" > <br>
+
+        <label>Choose music photo (*.png/jpeg/jpg)</label>
+        <input type="file" accept=".png, .jpeg, .jpg" id="photoFile" name="photoFile"  > <br>
+
+        <label>Name of song</label>
+        <input type="text" th:field="*{title}" id="title" name="title"><br>
+
+        <label>Name of artist</label>
+        <input type="text" th:field="*{artist}" id="artist" name="artist"><br>
+
+        <button type="submit" onclick="/addSong">Submit</button>
+      </form>
+
+    </div>
+
+  </body>
+</html>
